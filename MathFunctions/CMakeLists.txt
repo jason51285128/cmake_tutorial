@@ -3,10 +3,14 @@ set(CMAKE_REQUIRED_LIBRARIES "m")
 check_symbol_exists(log "math.h" HAVE_LOG)
 check_symbol_exists(exp "math.h" HAVE_EXP)
 
-add_library(MathFunctions
+add_library(MathFunctions 
             mysqrt.cxx
             ${CMAKE_CURRENT_BINARY_DIR}/Table.h
             )
+
+set_target_properties(MathFunctions PROPERTIES
+                      POSITION_INDEPENDENT_CODE ${BUILD_SHARED_LIBS}
+                      )
 
 if(HAVE_LOG AND HAVE_EXP)
   target_compile_definitions(MathFunctions

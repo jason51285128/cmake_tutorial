@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 project(Tutorial VERSION 1.0)
 
 option(USE_MYMATH "Use tutorial provided math implementation" ON)
+option(BUILD_SHARED_LIBS "Build using shared libraries" OFF)
 
 # configure_file
 configure_file(TutorialConfig.h.in TutorialConfig.h)
