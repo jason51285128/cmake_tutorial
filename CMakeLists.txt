@@ -4,10 +4,6 @@ cmake_minimum_required(VERSION 3.10)
 project(Tutorial VERSION 1.0)
 
 option(USE_MYMATH "Use tutorial provided math implementation" ON)
-include(CheckSymbolExists)
-set(CMAKE_REQUIRED_LIBRARIES "m")
-check_symbol_exists(log "math.h" HAVE_LOG)
-check_symbol_exists(exp "math.h" HAVE_EXP)
 
 # configure_file
 configure_file(TutorialConfig.h.in TutorialConfig.h)
